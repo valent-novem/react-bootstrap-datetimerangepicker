@@ -37,8 +37,11 @@ class DatetimeRangePicker extends React.Component {
     this.handleCallback = this.handleCallback.bind(this);
   }
 
+  initRef(ref) {
+    this.$picker = $(ref);
+  }
+
   componentDidMount() {
-    this.$picker = $(this.refs.picker);
     // initialize
     this.$picker.daterangepicker(this.getOptionsFromProps(), this.handleCallback);
     // attach event listeners
@@ -129,7 +132,7 @@ class DatetimeRangePicker extends React.Component {
     this.setOptionsFromProps();
 
     return (
-      <div ref="picker" style={this.props.style} className={this.props.className}>
+      <div ref={this.initRef} style={this.props.style} className={this.props.className}>
         {this.props.children}
       </div>
     );
