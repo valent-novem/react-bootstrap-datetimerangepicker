@@ -37,9 +37,9 @@ class DatetimeRangePicker extends React.Component {
     this.handleCallback = this.handleCallback.bind(this);
   }
 
-  initRef(ref) {
+  initRef = (ref) => {
     this.$picker = $(ref);
-  }
+  };
 
   componentDidMount() {
     // initialize
